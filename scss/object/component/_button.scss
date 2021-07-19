@@ -1,0 +1,30 @@
+.c-button {
+    margin: 50px 0;
+    text-align: center;
+    position: relative;
+    transition: .5s;
+    opacity: .7;
+    &:hover {
+        opacity: 1;
+    }
+
+    a {
+        color: $color-white--text;
+        background: $color-gray--border;
+        font-weight: bold;
+        padding-right: 10px;
+        position: relative;
+        transition: .5s;
+        padding: 10px 50px 10px 20px;
+        border-radius: 5px;
+        &:hover {
+            // color: #A99D4D;
+        }
+    }
+}
+
+.c-button--right {
+    left: 100%;
+    position: relative;
+    transform: translateX(-100%);
+}

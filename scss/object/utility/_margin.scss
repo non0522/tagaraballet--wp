@@ -1,0 +1,29 @@
+// .u-mb-s margin-bottom: 20px /  / ;
+// .u-mb-m margin-bottom: 30px /  / ;
+// .u-mb-m margin-bottom: 30px /  / ;
+// .u-mb-ex margin-bottom: 50px /  / ;
+// .u-mtb-s margin: 20px 0 /;
+
+.u-m-base {
+    margin: 40px 20px ;
+    @include responsive(tab) {
+        margin: 20px 40px 0;
+    }
+    @include responsive(pc) {
+        margin: 20px 60px 0;
+    }
+}
+.u-mb-m > * {
+    margin-bottom: 40px;
+}
+.u-mb-s > * {
+    margin-bottom: 70px;
+    @include responsive (tab) {
+        margin-bottom: 100px;
+    }
+}
+.u-mb-s:last-of-type {
+    @include responsive(pc) {
+        margin-bottom: 0;
+    }
+}

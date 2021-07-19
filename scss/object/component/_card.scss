@@ -1,0 +1,73 @@
+.c-card {
+    display: flex;
+    max-height: 100px;
+    transition: .5s;
+    @include responsive(tab) {
+        max-height: 140px;
+    }
+    &:hover {
+        background: #f7f7f7;
+    }
+    img {
+        width: 30%;
+        box-shadow: 3px 3px 7px 0px $color-gray--border;
+        object-fit: cover;
+        @include responsive(tab) {
+            width: 35%;
+        }
+    }
+    &__content {
+        margin-left: 16px;
+        overflow: hidden;
+        margin-bottom: 8px;
+        
+        &__date {
+            margin-bottom: 10px;
+            @include responsive(tab) {
+                font-size: 14px;
+            }
+        }
+        &__title {
+            margin-bottom: 10px;
+            @include responsive(tab) {
+                font-size: 18px;
+            }
+        }
+        &__text {
+            font-size: 12px;
+            @include responsive(tab) {
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+.c-card--instructors {
+    margin-bottom: 40px;
+    max-height: 300px;
+    img {
+        width: 40%;
+        @include responsive(tab) {
+            // width: 50%;
+        }
+    }
+    .c-card__content {
+        &__title {
+            padding: 10px 10px;
+
+        }
+        &__title {
+            padding: 10px 10px;
+            @include responsive(tab) {
+                font-size: 24px;
+            }
+        }
+        &__text {
+            font-size: 12px;
+            @include responsive(tab) {
+                font-size: 16px;
+            }
+        }
+
+    }
+}

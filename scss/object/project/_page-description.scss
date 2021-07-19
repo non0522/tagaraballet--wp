@@ -1,0 +1,14 @@
+.p-page-description {
+    &__title {
+        margin-bottom: 20px;        
+        @include responsive(tab) {
+            margin-bottom: 40px;
+            font-size: 32px;
+        }
+        &__text {
+            @include responsive(tab) {
+                font-size:16px;
+            }
+        }
+    }
+}

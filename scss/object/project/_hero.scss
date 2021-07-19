@@ -1,0 +1,44 @@
+.p-hero {
+    height: 35vh;
+    width: calc(100% + 40px);
+    position: relative;
+    left: -20px;
+    background-image: url(/img/top-bg.png);
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 20px;
+    @include responsive(tab) {
+        height: 55vh;
+        width: calc(100% + 80px);
+        left: -40px;
+    }
+    @include responsive(pc) {
+        height: 500px;
+        width: calc(100% + 120px);
+        left: -60px;
+    }
+}
+
+.p-hero--archive {
+    background-image: url(/img/top-bar.jpg);
+    height: 25vh;
+    @include responsive(tab) {
+        height: 55vh;
+    }
+    @include responsive(pc) {
+        height: 500px;
+    }
+}
+.p-hero--page {
+
+    height: 25vh;
+    @include responsive(tab) {
+        height: 55vh;
+    }
+    @include responsive(pc) {
+        height: 500px;
+    }
+    h2 {
+        font-family: 'Baskerville';
+    }
+}

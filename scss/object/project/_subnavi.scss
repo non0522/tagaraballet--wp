@@ -1,0 +1,49 @@
+.p-subnav {
+    @include responsive(pc) {
+        display: none;
+    }
+    ul {
+        display: flex;
+        justify-content: space-between;
+        @include responsive(tab) {
+            justify-content: flex-start;
+        }
+        li {
+            font-size: 14px;
+            border-bottom: 1px solid #707070;
+            padding-bottom: 10px;
+            position: relative;
+            display: inline-block;
+            transition: .5s;
+            @include responsive(tab) {
+                margin-right: 30px;
+                font-size: 18px;
+            }
+            &:hover {
+                color: #A99D4D;
+            }
+            &::after {
+                position: absolute;
+                bottom: -2px;
+                left: 0;
+                content: '';
+                width: 100%;
+                height: 3px;
+                background: white;
+                transform: scale(0, 1);
+                transform-origin: right top;
+                transition: transform .3s;
+            }
+            &:hover::after {
+                transform-origin: left top;
+                transform: scale(1, 1);
+            }
+            span {
+                font-size: 12px;
+                @include responsive(tab) {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,24 @@
+
+.c-arrow::before { 
+    content: "";
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid #A99D4D;
+    border-right: 2px solid #A99D4D ;
+    transform: rotate(45deg);
+    z-index: 1;
+  }
+   
+  .c-arrow::after { 
+    content: "";
+    position: absolute;
+    top:7px;
+    right: 10px;
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    background: #E2E2E2;
+  }

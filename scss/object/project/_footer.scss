@@ -1,0 +1,18 @@
+.p-footer {
+    background: $color-gray--footer;
+    color: $color-gray--text;
+    text-align: center;
+    padding-bottom: 40px;
+
+    &__content {
+        display: flex;
+        justify-content: space-evenly;
+        text-align: left;
+        p {
+            font-size: 10px;
+            @include responsive(tab) {
+                font-size: 12px;
+            }
+        }
+    }
+}

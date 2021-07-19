@@ -1,0 +1,62 @@
+.c-title--top {
+    padding: 10px 20px;
+    @include responsive(tab) {
+        padding: 20px 40px;
+    }
+}
+
+.c-title--heading {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin-left: 2rem;
+    text-indent: -2rem;
+    line-height: 1.5;
+    z-index: 1;
+    @include responsive(tab) {
+        left: 40px;
+    }
+    span {
+        font-size: 18px;
+    }
+    &--archive{
+        color: $color-white--text;
+    }
+}
+.c-title--article {
+    display: inline-block;
+    border-bottom: solid 2px $color-gray--footer;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    @include responsive(tab) {
+        margin-bottom: 40px;
+    }
+    
+    span {
+        font-size: 16px;
+        padding-left: 20px;
+        @include responsive(tab) {
+            font-size: 20px;
+        }
+    }
+}
+.c-title--footer {
+    font-size: 24px;
+    font-family: 'Libre Baskerville';
+    font-weight: normal;
+    padding: 20px;
+    position: relative;
+    @include responsive(tab) {
+        font-size: 30px;
+    }
+    &::after{
+        content:"";
+        display:block;
+        width: 100%;
+        height:1px;
+        background: $color-gray--border;
+        position:absolute;
+        // bottom:0;
+        left:-5px;
+     }
+}

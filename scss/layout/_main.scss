@@ -1,0 +1,38 @@
+.p-main {
+    @include responsive(pc) {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+        gap: 40px;
+    }
+    &__contents {
+        @include responsive(pc) {
+            width: 70%;
+        }
+    }
+} 
+
+
+
+// .l-main {
+//     // width: 100%;
+//     @include responsive(pc) {
+//         display: grid;
+//         grid-template-columns: 30% 70%;
+//         grid-template-rows: 600px 1fr;
+//         gap: 0px 40px;
+//         grid-template-areas:
+//         "top top"
+//         "aside main";
+        
+//         .p-news { 
+//             grid-area: top; 
+//         }
+//         .p-main-sections { 
+//             grid-area: main; 
+//         }
+//         .l-aside { 
+//             grid-area: aside; 
+//         }
+//     }
+// }

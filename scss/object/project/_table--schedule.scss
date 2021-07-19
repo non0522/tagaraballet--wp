@@ -1,0 +1,94 @@
+.p-table--schedule {
+    border-collapse:collapse;
+    box-sizing: border-box;
+    @include responsive(tab) {
+        display: flex;
+    }
+    &__time {
+        background-color: #F5F5F5;
+        display: none;
+        @include responsive(tab) {
+            display: block;
+            text-align: center;
+            vertical-align: middle;
+        }
+    }
+
+    ul {
+        flex-basis: 18%;
+        &:first-child {
+            flex-basis: 10%;
+        }
+        .top-line {
+            color: $color-gold;
+            background-color: #F5F5F5;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 20px;
+            @include responsive(tab) {
+            }
+        }
+        &:last-child {
+            @include responsive(tab) {
+                border-right: 1px solid $color-gray--text;
+
+            }
+        }
+
+        li {
+            border: 1px solid $color-gray--text;
+            border-bottom: none;
+            @include responsive(tab) {
+                border-right: none;
+                min-height: 100px;
+                padding: 5px;
+            }
+            div {
+                line-height: 1.5;
+                padding: 20px 40px;
+                @include responsive(tab) {
+                    padding: 0;
+                }
+            }
+
+            &:last-child {
+                border-bottom: 1px solid $color-gray--text;
+            }
+        }
+    }
+}
+
+.p-table--fee{
+    margin-bottom: 40px;
+    width: 100%;
+    border: 1px solid $color-gray--text;
+
+    tr {
+        text-align: center;
+
+        border: 1px solid $color-gray--text;
+        th {
+            color: $color-gold;
+            background-color: #F5F5F5;
+            padding: 20px;
+        }
+        td { 
+            vertical-align: middle;
+            padding: 20px;
+            &:first-child {
+                border-right: 1px solid $color-gray--text;
+            }
+        }
+    }
+    &__desc {
+        @include responsive(tab) {
+            display: flex;
+            justify-content: space-evenly;
+        }
+        p {
+            margin-bottom: 1rem;
+            @include responsive(tab) {
+            }
+        }
+    }
+}

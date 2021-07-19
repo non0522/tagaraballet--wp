@@ -1,0 +1,50 @@
+.p-gnav {
+    margin: 0 auto;
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        @include responsive(pc) {
+            display: block;
+        }
+        li {
+            border: $color-white--text 1px solid;
+            width: 33%;
+            height: 100px;
+            text-align: center;
+            @include responsive(pc) {
+                width: 100%;
+                text-align: left;
+                border-bottom: $color-gray--text 1px solid;
+                height: auto;
+                &:first-child {
+                    border-top: $color-gray--text 1px solid;
+                }
+            }
+            a {
+                display: block;
+                padding-top: 20px;
+                @include responsive(pc) {
+                    padding: 10px;
+                }
+            }
+        }
+    }
+}
+
+.p-gnav__pc {
+    display: none;
+    @include responsive(pc) {
+        display: block;
+        // font-size: 32px;
+        span {
+            font-size: 16px;
+        }
+    }
+}
+.p-gnav__sp,
+.c-icon {
+    @include responsive(pc) {
+        display: none;
+    }
+}

@@ -1,0 +1,13 @@
+.p-top {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: $color-white--text;
+    z-index: 2;
+    @include responsive (tab) {
+        height: 70px;
+    }
+}

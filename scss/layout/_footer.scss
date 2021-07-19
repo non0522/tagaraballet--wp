@@ -1,0 +1,13 @@
+.l-footer {
+    position: relative;
+    width: calc(100% + 40px);
+    left: -20px;
+    @include responsive(tab) {
+        width: calc(100% + 80px);
+        left: -40px;
+    }
+    @include responsive(pc) {
+        width: calc(100% + 120px);
+        left: -60px;
+    }
+}

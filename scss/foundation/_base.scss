@@ -1,0 +1,58 @@
+// GENERAL STYLING
+// ================================================
+html {
+  font-size: 100%;
+  width: 100%;
+  height: 100%;
+  font-family: 'Roboto', 'Noto Sans JP', sans-serif;
+  color: #363636;
+  
+}
+
+body {
+  width: 100%;
+  margin:0;
+  padding:0;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+img {
+  width: 100%;
+}
+
+// COMMON
+// ================================================ 
+p {
+  line-height: 1.5;
+  font-size: 14px;
+  @include responsive(tab) {
+    font-size: 18px;
+  }
+}
+
+h1, h2{
+  font-family: 'Libre Baskerville', "Noto Serif JP";
+  font-size: 24px;
+  color: $color-black--title;
+  @include responsive(tab) {
+    font-size: 40px;
+  }
+  // @include responsive(pc) {
+  //   font-size: 64px;
+  // }
+}
+
+h3 {
+  font-weight: bolder;
+  font-size: 24px;
+  color: $color-black--title;
+    @include responsive(tab) {
+    font-size: 40px;
+  }
+}
