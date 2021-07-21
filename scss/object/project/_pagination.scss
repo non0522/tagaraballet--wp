@@ -1,7 +1,23 @@
 .p-pagination {
+    .wp-pagenavi {
+        display: flex;
+        justify-content: space-between;
+
+        a,
+        span {
+            padding: 10px;
+            border: none;
+        }
+
+        .current{
+            background-color: $color-gray--border;
+            color: $color-white--text;
+            border-radius: 2px;
+        } 
+    }
+}
+
+.p-pagination--single {
     display: flex;
     justify-content: space-between;
-    max-width: 500px;
-    margin: 0 auto;
-
 }

@@ -3,7 +3,7 @@
     width: calc(100% + 40px);
     position: relative;
     left: -20px;
-    background-image: url(/img/top-bg.png);
+    background-image: url(../img/top-bg.png);
     background-size: cover;
     background-position: center;
     margin-bottom: 20px;
@@ -20,7 +20,7 @@
 }
 
 .p-hero--archive {
-    background-image: url(/img/top-bar.jpg);
+    background-image: url(../img/top-bar.jpg);
     height: 25vh;
     @include responsive(tab) {
         height: 55vh;

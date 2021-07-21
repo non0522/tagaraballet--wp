@@ -11,7 +11,7 @@
     img {
         width: 30%;
         box-shadow: 3px 3px 7px 0px $color-gray--border;
-        object-fit: cover;
+        object-fit: contain;
         @include responsive(tab) {
             width: 35%;
         }
@@ -46,6 +46,7 @@
     margin-bottom: 40px;
     max-height: 300px;
     img {
+        object-fit: cover;
         width: 40%;
         @include responsive(tab) {
             // width: 50%;

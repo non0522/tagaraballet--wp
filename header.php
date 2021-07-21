@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/common/ico/favicon.ico">
-    
     <?php wp_head(); ?>
 </head>
 
@@ -34,19 +33,34 @@
 
                 </button>
             </section>
-            <section class="p-hero">
-                <h2 class="c-title--heading">大人<span>のための</span><br>バレエサークル</h2>
-                <?php //bloginfo( 'description' ); ?>
-                <div class="c-shadow"></div>
-                <img class="c-logo" src="/img/logo2.svg" alt="">
+            <section <?php if(is_front_page()) {
+                                echo 'class="p-hero"';
+                            }else {
+                                echo 'class="p-hero p-hero--archive"';
+                            } ?>>
+                <h2 <?php if(is_front_page()) {
+                                echo 'class="c-title--heading"';
+                            }else {
+                                echo 'class="c-title--heading c-title--heading--archive"';
+                            } ?>>大人<span>のための</span><br>バレエサークル</h2>
+                <?php 
+                    if(is_front_page()){
+                        echo '<div class="c-shadow"></div>';
+                    }else {
+                        echo '';
+                    } ?>
+                <img class="c-logo" src="<?php bloginfo('template_directory'); ?>/img/logo2.svg" alt="">
             </section>
-            <?php wp_nav_menu(); ?>
-            <!-- <nav class="p-subnav">
-                <ul>
-                    <li><a href="">タガラのこと<span><br>About us</span></a></li>
-                    <li><a href="">日程・料金<span><br>Schedule/Fee</span></a></li>
-                    <li><a href="">講師紹介<span><br>Instructors</span></a></li>
-                    <li><a href="">ブログ<span><br>Blog</span></a></li>
-                </ul>
-            </nav> -->
+
+            <nav class="p-subnav">
+            <?php wp_nav_menu(
+                array( 
+                    'theme_location' => 'sub_nav',
+                    'container' => '',
+                    'menu_class' => 'nav',
+                    'items_wrap' => '<ul>%3$s</ul>',
+                    ) 
+            ); ?>
+            </nav>
+            
         </header><!-- /.l-header -->

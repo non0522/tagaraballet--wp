@@ -1,4 +1,8 @@
 <?php 
+
+
+/* テーマ機能のサポート
+   ========================================================================== */
     function custom_theme_support() {
         add_theme_support( 'html5', array(
             'search-form', 
@@ -11,9 +15,17 @@
         add_theme_support( 'title-tag' );
         add_theme_support( 'post-thumbnails' );
         add_theme_support( 'automatic-feed-links' );
+        /* ナビメニューの定義と設定*/
+        register_nav_menus(array(
+            'global_nav' => esc_html__('main_nav', 'tagara'),
+            'sub_nav' => esc_html__('sub_nav', 'tagara'),
+        ));
     }
     add_action( 'after_setup_theme', 'custom_theme_support' );
 
+
+/* <head>の設定
+   ========================================================================== */
     function tagara_script(){
         $locale = get_locale();
         $locale = apply_filters('theme_locale', $locale, 'tagara');
@@ -29,12 +41,46 @@
     add_action( 'wp_enqueue_scripts', 'tagara_script' );
 
 
-    // <link rel="stylesheet" href="https://unpkg.com/destyle.css@1.0.5/destyle.css">
-    // <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&family=Noto+Serif+JP:wght@500&family=Roboto:wght@300&display=swap" rel="stylesheet">
-    // <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
-    // <link href="" rel="stylesheet">
-    // <script src="https://kit.fontawesome.com/b8a7fea4d4.js" crossorigin="anonymous"></script>
-    // <script src="jquery/jquery-3.6.0.min.js"></script>
-    // <script src=""></script>
+/* .svg 拡張子画像のアップロードを許可
+   ========================================================================== */
+   function cc_mime_types($mimes) {
+    $mimes['svg'] = 'image/svg+xml';
+    return $mimes;
+  }
+  add_filter('upload_mimes', 'cc_mime_types');
 
-    // <title>タガラバレエサークル〜千葉県柏市の大人向けバレエサークル〜</title>
+
+/* アイキャッチ設定で SVG 画像のサムネイルを表示（config.phpを修正する必要があり）
+   ========================================================================== */
+   function fix_svg_thumb_display() {
+    echo 
+    '<style>
+      td.media-icon img[src$=".svg"], 
+      img[src$=".svg"].attachment-post-thumbnail, 
+      #set-post-thumbnail img[src$=".svg"]{ 
+      width: 100% !important; 
+      height: auto !important; 
+      }
+    </style>';
+  }
+  add_action('admin_head', 'fix_svg_thumb_display');
+
+
+/* 出力されたメニューアイテムの文字列を置換（タイトル属性をタイトル下に表示）
+   ========================================================================== */
+   function description_in_nav_menu($item_output, $item){
+       return preg_replace('/(<a.*?>[^<]*?)</', '$1' . "<br /><span>{$item->attr_title}</span><", $item_output);
+    }
+    add_filter('walker_nav_menu_start_el', 'description_in_nav_menu', 10, 4);
+
+
+/* archiveをカスタマイズ（urlを付与）
+   ========================================================================== */
+function post_has_archive( $args, $post_type) {
+    if ('post' ==$post_type) {
+        $args['rewrite'] = true;
+        $args['has_archive'] = 'blog';
+    }
+    return $args;
+}
+add_filter('register_post_type_args', 'post_has_archive', 10, 2);
