@@ -29,11 +29,16 @@
     function tagara_script(){
         $locale = get_locale();
         $locale = apply_filters('theme_locale', $locale, 'tagara');
+		wp_enqueue_style('ress', '//unpkg.com/destyle.css@1.0.5/destyle.css', array(), '1.0.5');
         if( $locale == 'ja' ) {
-            wp_enqueue_style('Notosans', '//fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&family=Noto+Serif+JP:wght@500&family=Roboto:wght@300&display=swap', array());
+            wp_enqueue_style('Notosans', '//fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap', array(), '') ;
+            wp_enqueue_style('Notoserif', '//fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500&display=swap', array(), '') ;
+            wp_enqueue_style('Roboto', '//fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap', array(), '') ;
         }
-        wp_enqueue_style('Baskervill', '//fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap', array());
-        wp_enqueue_style('ress', '//unpkg.com/destyle.css@1.0.5/destyle.css', array(), '1.0.5');
+		//fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap
+		//fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500&display=swap
+		//fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap
+        wp_enqueue_style('Baskervill', '//fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap', array(), '') ;
         wp_enqueue_style('tagara', get_template_directory_uri().'/css/style.css',array(), '1.0.0');
         wp_enqueue_script('jquery', get_template_directory_uri().'/jquery/jquery-3.6.0.min.js',"", array(), '3.6.0', true);
         wp_enqueue_script('stylejs', get_template_directory_uri().'/jquery/style.js',array(), '1.1.0', true);
@@ -84,3 +89,104 @@ function post_has_archive( $args, $post_type) {
     return $args;
 }
 add_filter('register_post_type_args', 'post_has_archive', 10, 2);
+
+
+
+/* パンくずリストの作成
+   ========================================================================== */
+function mytheme_breadcrumb() {
+	//HOME>と表示
+	$sep = '>';
+	echo '<li><a href="'.get_bloginfo('url').'" >HOME</a></li>';
+	echo $sep;
+ 
+	//投稿記事ページとカテゴリーページでの、カテゴリーの階層を表示
+	$cats = '';
+	$cat_id = '';
+	if ( is_single() ) {
+		$cats = get_the_category();
+		if( isset($cats[0]->term_id) ) $cat_id = $cats[0]->term_id;
+	}
+	else if ( is_category() ) {
+		$cats = get_queried_object();
+		$cat_id = $cats->parent;
+	}
+	$cat_list = array();
+	while ($cat_id != 0){
+		$cat = get_category( $cat_id );
+		$cat_link = get_category_link( $cat_id );
+		array_unshift( $cat_list, '<a href="'.$cat_link.'">'.$cat->name.'</a>' );
+		$cat_id = $cat->parent;
+	}
+	foreach($cat_list as $value){
+		echo '<li>'.$value.'</li>';
+		echo $sep;
+	}
+ 
+	//現在のページ名を表示
+	if ( is_singular() ) {
+		if ( is_attachment() ) {
+			previous_post_link( '<li>%link</li>' );
+			echo $sep;
+		}
+		the_title( '<li>', '</li>' );
+	}
+	else if( is_archive() ) the_archive_title( '<li>', '</li>' );
+	else if( is_search() ) echo '<li>検索 : '.get_search_query().'</li>';
+	else if( is_404() ) echo '<li>ページが見つかりません</li>';
+}
+
+
+/* カスタム投稿の追加
+   ========================================================================== */
+function cpt_register_works() { //add_actionの２つのパラメーターを定義
+	$labels = [
+		"singular_name" => "instructors-list",
+		"edit_item" => "instructors-list",
+	];
+	$args = [
+		"label" => "講師一覧", //管理画面に出てくる名前
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"show_in_rest" => true,
+		"rest_base" => "",
+		"rest_controller_class" => "WP_REST_Posts_Controller",
+		"has_archive" => true,
+		"delete_with_user" => false,
+		"exclude_from_search" => false,
+		"map_meta_cap" => true,
+		"hierarchical" => true,
+		"rewrite" => [ "slug" => "instructors-list", "with_front" => true ], //スラッグをworksに設定
+		"query_var" => true,
+		"menu_position" => 5,
+		"supports" => [ "title", "editor", "thumbnail" ],
+	];
+	register_post_type( "instructors-list", $args );
+}
+add_action( 'init', 'cpt_register_works' );
+
+
+/* カスタム投稿にカテゴリを追加
+   ========================================================================== */
+function cpt_register_dep() { //add_actionの２つのパラメーターを定義
+	$labels = [
+		"singular_name" => "dep",
+	];
+	$args = [
+		"label" => "カテゴリー",
+		"labels" => $labels,
+		"publicly_queryable" => true,
+		"hierarchical" => true,
+		"show_in_menu" => true,
+		"query_var" => true,
+		"rewrite" => [ 'slug' => 'dep', 'with_front' => true, ], //カテゴリーのスラッグ
+		"show_admin_column" => false,
+		"show_in_rest" => true,
+		"rest_base" => "dep",
+		"rest_controller_class" => "WP_REST_Terms_Controller",
+		"show_in_quick_edit" => false,
+		];
+	register_taxonomy( "dep", [ "instructors-list" ], $args ); //「works」というカスタム投稿タイプにカテゴリーを追加
+}
+add_action( 'init', 'cpt_register_dep' );

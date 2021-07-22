@@ -54,6 +54,7 @@ h3 {
   font-size: 24px;
   color: $color-black--title;
     @include responsive(tab) {
-    font-size: 40px;
+    font-size: 36px;
   }
 }
+

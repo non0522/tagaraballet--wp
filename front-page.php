@@ -28,45 +28,37 @@
             <section class="p-main">
                 <section class="p-main__contents u-mb-s">
                     <article class="p-article p-concept">
-                        <h3 class="c-title--article">About Tagara<span>タガラについて</span></h3>
+                        <h3 class="c-title--article"><?php echo CFS()->get('t_title', '17'); ?><span><?php echo CFS()->get('t_title--ja', '17'); ?></span></h3>
                         <section class="p-article__content">
-                            <img src="/img/top-bar.jpg" alt="">
-                            <p class="p-article__content__text">
-                                〜大人の方のバレエサークル〜
-                                <br>千葉県柏駅徒歩５分の場所にあるにスタジオで未経験から上級までクラスを行なっています。千葉県柏駅徒歩５分の場所にあるにスタジオで未経験から上級までクラスを行なっています。千葉県柏駅徒歩５分の場所にあるにスタジオで未経験から上級までクラスを行なっています。
-                            </p>
+                            <img src="<?php echo CFS()->get('t_img', '17'); ?>" alt="">
+                            <p class="p-article__content__text"><?php echo CFS()->get('t_digest', '17'); ?></p>
                         </section>
                         <div class="c-button">
-                            <a href="">詳細はこちら
+                            <a href="<?php bloginfo('url') ;?>/tagara">詳細はこちら
                                 <span class="c-arrow"></span>
                             </a>
                         </div>
                     </article><!-- /.p-concept -->
                     <article class="p-article p-lesson">
-                        <h3 class="c-title--article">Schedule / Fee<span>レッスン日程・料金</span></h3>
+                        <h3 class="c-title--article"><?php echo CFS()->get('s_title', '19'); ?><span><?php echo CFS()->get('s_title--ja', '19'); ?></span></h3>
                         <section class="p-article__content">
-                            <img src="/img/lessonschedul.jpg" alt="">
-                            <p class="p-article__content__text">
-                                週3回６クラス。基本レッスンに加え、パ・ド・ドゥクラス、フェルデンクライスクラスも実施しています。週3回６クラス。基本レッスンに加え、パ・ド・ドゥクラス、フェルデンクライスクラスも実施しています。週3回６クラス。基本レッスンに加え、パ・ド・ドゥクラス、フェルデンクライスクラスも実施しています。
-                            </p>
+                            <img src="<?php echo CFS()->get('s_img', '19'); ?>" alt="">
+                            <p class="p-article__content__text"><?php echo CFS()->get('s_digest', '19'); ?></p>
                         </section>
                         <div class="c-button">
-                            <a href="">詳細はこちら
+                            <a href="<?php bloginfo('url') ;?>/schedule">詳細はこちら
                                 <span class="c-arrow"></span>
                             </a>
                         </div>
                     </article><!-- /.p-lesson -->
                     <article class="p-article p-instructors">
-                        <h3 class="c-title--article">Instructors<span>講師紹介</span></h3>
+                        <h3 class="c-title--article"><?php echo CFS()->get('i_title', '25'); ?><span><?php echo CFS()->get('i_title--ja', '25'); ?></span></h3>
                         <section class="p-article__content">
-                            <img src="/img/index-instructors.jpg" alt="">
-                            <p class="p-article__content__text">
-                                〜Tagara Ballet Circleの講師陣のご紹介〜
-                                <br>経験豊富な講師陣が楽しく学べるレッスンをご提供しています。経験豊富な講師陣が楽しく学べるレッスンをご提供しています。経験豊富な講師陣が楽しく学べるレッスンをご提供しています。
-                            </p>
+                            <img src="<?php echo CFS()->get('i_img', '25'); ?>" alt="">
+                            <p class="p-article__content__text"><?php echo CFS()->get('i_digest', '25'); ?></p>
                         </section>
                         <div class="c-button">
-                            <a href="">詳細はこちら
+                            <a href="<?php bloginfo('url') ;?>/instructors">詳細はこちら
                                 <span class="c-arrow"></span>
                             </a>
                         </div>

@@ -44,15 +44,19 @@
 
 .c-card--instructors {
     margin-bottom: 40px;
-    max-height: 300px;
+    max-height: inherit;
+    align-items: center;
     img {
         object-fit: cover;
         width: 40%;
+        max-height: 300px;
         @include responsive(tab) {
             // width: 50%;
         }
     }
     .c-card__content {
+        width: 60%;
+
         &__title {
             padding: 10px 10px;
 

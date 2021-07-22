@@ -1,0 +1,11 @@
+.c-breadcrumb {
+    font-size: 14px;
+    display: flex;
+    margin-bottom: 20px;
+    > * {
+        margin: 0 10px;
+    }
+    li:first-child {
+        margin-left: 0;
+    }
+}

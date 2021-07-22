@@ -56,7 +56,7 @@ h3 {
 
 @media screen and (min-width: 520px) {
   h3 {
-    font-size: 40px;
+    font-size: 36px;
   }
 }
 
@@ -365,13 +365,21 @@ h3 {
 
 .c-card--instructors {
   margin-bottom: 40px;
-  max-height: 300px;
+  max-height: inherit;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .c-card--instructors img {
   -o-object-fit: cover;
      object-fit: cover;
   width: 40%;
+  max-height: 300px;
+}
+
+.c-card--instructors .c-card__content {
+  width: 60%;
 }
 
 .c-card--instructors .c-card__content__title {
@@ -428,6 +436,7 @@ h3 {
   position: relative;
   -webkit-transform: translateX(-100%);
           transform: translateX(-100%);
+  text-align: end;
 }
 
 .c-arrow::before {
@@ -472,6 +481,26 @@ h3 {
     bottom: -50px;
     right: 20px;
   }
+}
+
+.c-date {
+  text-align: right;
+}
+
+.c-breadcrumb {
+  font-size: 14px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.c-breadcrumb > * {
+  margin: 0 10px;
+}
+
+.c-breadcrumb li:first-child {
+  margin-left: 0;
 }
 
 .p-top {
@@ -742,7 +771,7 @@ h3 {
 }
 
 .p-article--map .c-button {
-  margin-top: 250px;
+  margin-top: 200px;
 }
 
 .p-search {
@@ -987,6 +1016,14 @@ h3 {
   }
 }
 
+.p-table--schedule__time .time {
+  padding: 30px 0;
+}
+
+.p-table--schedule__time .time:nth-child(4), .p-table--schedule__time .time:nth-child(5) {
+  border-top: none;
+}
+
 .p-table--schedule ul {
   -ms-flex-preferred-size: 18%;
       flex-basis: 18%;
@@ -1018,15 +1055,17 @@ h3 {
 
 @media screen and (min-width: 520px) {
   .p-table--schedule ul li {
+    font-size: 14px;
     border-right: none;
-    min-height: 100px;
-    padding: 5px;
+    min-height: 130px;
+    padding: 0 5px;
   }
 }
 
 .p-table--schedule ul li div {
   line-height: 1.5;
-  padding: 20px 40px;
+  padding: 0 40px;
+  margin: -1px 0;
 }
 
 @media screen and (min-width: 520px) {
@@ -1046,6 +1085,7 @@ h3 {
 }
 
 .p-table--fee tr {
+  width: 100%;
   text-align: center;
   border: 1px solid #b9b9b9;
 }
@@ -1058,26 +1098,53 @@ h3 {
 
 .p-table--fee tr td {
   vertical-align: middle;
-  padding: 20px;
+  padding: 20px 5px;
+  font-size: 14px;
+  min-height: 120px;
+}
+
+@media screen and (min-width: 520px) {
+  .p-table--fee tr td {
+    padding: 20px;
+  }
 }
 
 .p-table--fee tr td:first-child {
   border-right: 1px solid #b9b9b9;
+  width: 40%;
+}
+
+.p-table--fee__desc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
 }
 
 @media screen and (min-width: 520px) {
   .p-table--fee__desc {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
   }
 }
 
-.p-table--fee__desc p {
-  margin-bottom: 1rem;
+@media screen and (min-width: 520px) {
+  .p-table--fee__desc p {
+    font-size: 14px;
+    width: 50%;
+  }
 }
 
 .u-m-base {
@@ -1101,12 +1168,12 @@ h3 {
 }
 
 .u-mb-s > * {
-  margin-bottom: 70px;
+  margin-bottom: 60px;
 }
 
 @media screen and (min-width: 520px) {
   .u-mb-s > * {
-    margin-bottom: 100px;
+    margin-bottom: 80px;
   }
 }
 
@@ -1114,5 +1181,9 @@ h3 {
   .u-mb-s:last-of-type {
     margin-bottom: 0;
   }
+}
+
+.u-m0 {
+  margin: 0;
 }
 /*# sourceMappingURL=style.css.map */

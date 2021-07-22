@@ -17,13 +17,16 @@
     margin-bottom: 40px;
 }
 .u-mb-s > * {
-    margin-bottom: 70px;
+    margin-bottom: 60px;
     @include responsive (tab) {
-        margin-bottom: 100px;
+        margin-bottom: 80px;
     }
 }
 .u-mb-s:last-of-type {
     @include responsive(pc) {
         margin-bottom: 0;
     }
+}
+.u-m0 {
+    margin: 0;
 }
