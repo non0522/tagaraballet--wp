@@ -528,7 +528,7 @@ h1 {
   font-weight: bold;
   font-size: 16px;
   display: inline-block;
-  margin: 20px 0 10px;
+  margin: 40px 0 10px;
 }
 
 @media screen and (min-width: 520px) {
@@ -565,6 +565,58 @@ h1 {
   text-indent: 1rem;
   list-style: inside;
   line-height: 1.5;
+}
+
+.wpcf7-form {
+  background-color: #F5F5F5;
+  padding: 20px;
+}
+
+.wpcf7-form p {
+  padding-bottom: 30px;
+}
+
+.wpcf7-form p label {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #707070;
+}
+
+.wpcf7-form p span {
+  display: block;
+  margin-top: 20px;
+}
+
+.wpcf7-form p span .wpcf7-text {
+  width: 100%;
+  padding: 10px;
+  background: white;
+}
+
+.wpcf7-form p span .wpcf7-textarea {
+  width: 100%;
+  padding: 10px;
+  background: white;
+}
+
+.wpcf7-form p .wpcf7-submit {
+  display: block;
+  margin: 0 auto;
+  color: #ffffff;
+  background: #838383;
+  font-weight: bold;
+  padding: 10px 30px 10px 30px;
+  border-radius: 5px;
+  -webkit-transition: .5s;
+  transition: .5s;
+  opacity: .7;
+}
+
+.wpcf7-form p .wpcf7-submit:hover {
+  opacity: 1;
+}
+
+.gallery .gallery-item img {
+  border: 3px solid white !important;
 }
 
 .p-top {

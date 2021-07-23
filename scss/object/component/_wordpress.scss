@@ -1,4 +1,5 @@
 // single.phpのsvg画像の調整
+// ==========================================================================
 .p-single {
     .wp-post-image[src*=".svg"] {
         max-width: 200px;
@@ -13,6 +14,7 @@
 }
 
 // single.phpとpage.phpの目次調整
+// ==========================================================================
 .page_container {
     h2{
         text-indent: 35px;
@@ -20,12 +22,10 @@
         font-weight: bold;
         font-size: 16px;
         display: inline-block;
-        // border-bottom: solid 2px $color-gray--footer;
-        // padding-bottom: 5px;
-        margin: 20px 0 10px;
+        margin: 40px 0 10px;
         @include responsive(tab) {
             font-size: 20px;
-            // margin-bottom: 40px;
+
         }
     }
     h2:before {
@@ -36,7 +36,6 @@
         width: 30px;
         height: 1px;
         background-color: black;
-        // margin: 0 5px;
     }
     h2:after {
         position: absolute;
@@ -56,20 +55,61 @@
         }
     }
 }
-// <div class="page_container">
-//     <h2>目次</h2>
-//     <ol>
-//         <li>
-//             <a href="#chapter-1">2021年発表会</a>
-//         </li>
-//         <li>
-//             <a href="#chapter-2">2020発表会</a>
-//         </li>
-//         <li>
-//             <a href="#chapter-3">その他</a>
-//         </li>
-//         <li>
-//             <a href="#chapter-4">おすすめ</a>
-//         </li>
-//     </ol>
-// <h2 id="chapter-1">2021年発表会</h2>
+
+//コンタクトフォームのスタイリング
+// ==========================================================================
+
+.wpcf7-form{
+    background-color: #F5F5F5;
+    padding: 20px;
+    p {
+        padding-bottom: 30px;
+        label {
+            padding-bottom: 10px;
+            border-bottom: 1px solid #707070;
+        }
+
+        span {
+            display: block;
+            margin-top: 20px;
+
+            .wpcf7-text {
+                width: 100%;
+                padding: 10px;
+                background: white;
+                
+            }
+            .wpcf7-textarea {
+                width: 100%;
+                padding: 10px;
+                background: white;
+                
+            }
+        }
+        .wpcf7-submit {
+            display: block;
+            margin: 0 auto;
+            color: $color-white--text;
+            background: $color-gray--border;
+            font-weight: bold;
+            padding: 10px 30px 10px 30px;
+            border-radius: 5px;
+            transition: .5s;
+            opacity: .7;
+            &:hover {
+                opacity: 1;
+            }
+            
+        }
+    }
+}
+
+//ギャラリーimgのボーダー色変更
+// ==========================================================================
+.gallery {
+    .gallery-item {
+        img {
+            border: 3px solid white !important;
+        }
+    }
+} 

@@ -15,11 +15,6 @@
                 </section><!-- /.p-main__contents -->
                 <?php get_sidebar(); ?>
             </section>
-            <div class="c-button">
-                <a href="">もっと見る
-                    <span class="c-arrow"></span>
-                </a>
-            </div>
         </main><!-- /.l--main -->
                
         <?php get_footer(); ?>
