@@ -26,7 +26,7 @@ Template Name: スタジオ紹介ページ（About Tagara） */
                             </a>
                         </div>
                     </article>
-                    <article class="p-article p-article--map">
+                    <article id="anchor-map" class="p-article p-article--map">
                         <h3 class="c-title--article"><?php echo CFS()->get('t_page-title2'); ?><span><?php echo CFS()->get('t_page-title2--ja'); ?></span></h3>
                         <!-- <h3 class="">タイトルが入ります</h3> -->
                         <p><?php echo CFS()->get('t_desc2'); ?></p>

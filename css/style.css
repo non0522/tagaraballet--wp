@@ -36,27 +36,15 @@ p {
   }
 }
 
-h1, h2 {
+h1 {
   font-family: 'Libre Baskerville', "Noto Serif JP";
   font-size: 24px;
   color: #585858;
 }
 
 @media screen and (min-width: 520px) {
-  h1, h2 {
+  h1 {
     font-size: 40px;
-  }
-}
-
-h3 {
-  font-weight: bolder;
-  font-size: 24px;
-  color: #585858;
-}
-
-@media screen and (min-width: 520px) {
-  h3 {
-    font-size: 36px;
   }
 }
 
@@ -99,6 +87,16 @@ h3 {
 @media screen and (min-width: 1025px) {
   .p-main__contents {
     width: 70%;
+  }
+}
+
+.p-main h2, .p-main h3 {
+  font-size: 24px;
+}
+
+@media screen and (min-width: 520px) {
+  .p-main h2, .p-main h3 {
+    font-size: 30px;
   }
 }
 
@@ -151,6 +149,9 @@ h3 {
 }
 
 .c-title--heading {
+  font-family: 'Libre Baskerville', "Noto Serif JP";
+  font-size: 24px;
+  color: #585858;
   position: absolute;
   bottom: 20px;
   left: 20px;
@@ -162,6 +163,7 @@ h3 {
 
 @media screen and (min-width: 520px) {
   .c-title--heading {
+    font-size: 40px;
     left: 40px;
   }
 }
@@ -175,6 +177,8 @@ h3 {
 }
 
 .c-title--article {
+  font-weight: bold;
+  font-size: 24px;
   display: inline-block;
   border-bottom: solid 2px #707070;
   padding-bottom: 10px;
@@ -183,6 +187,7 @@ h3 {
 
 @media screen and (min-width: 520px) {
   .c-title--article {
+    font-size: 30px;
     margin-bottom: 40px;
   }
 }
@@ -343,22 +348,22 @@ h3 {
   }
 }
 
-.c-card__content__title {
+.c-card__content h2, .c-card__content h3, .c-card__content h4 {
   margin-bottom: 10px;
 }
 
 @media screen and (min-width: 520px) {
-  .c-card__content__title {
+  .c-card__content h2, .c-card__content h3, .c-card__content h4 {
     font-size: 18px;
   }
 }
 
-.c-card__content__text {
+.c-card__content p {
   font-size: 12px;
 }
 
 @media screen and (min-width: 520px) {
-  .c-card__content__text {
+  .c-card__content p {
     font-size: 14px;
   }
 }
@@ -501,6 +506,65 @@ h3 {
 
 .c-breadcrumb li:first-child {
   margin-left: 0;
+}
+
+.p-single .wp-post-image[src*=".svg"] {
+  max-width: 200px;
+  text-align: center;
+  display: block;
+  margin: 0 auto 20px;
+}
+
+@media screen and (min-width: 520px) {
+  .p-single .wp-post-image[src*=".svg"] {
+    max-width: 300px;
+    margin: 0 auto 40px;
+  }
+}
+
+.page_container h2 {
+  text-indent: 35px;
+  position: relative;
+  font-weight: bold;
+  font-size: 16px;
+  display: inline-block;
+  margin: 20px 0 10px;
+}
+
+@media screen and (min-width: 520px) {
+  .page_container h2 {
+    font-size: 20px;
+  }
+}
+
+.page_container h2:before {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 0;
+  width: 30px;
+  height: 1px;
+  background-color: black;
+}
+
+.page_container h2:after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  width: 30px;
+  height: 1px;
+  background-color: black;
+  margin: 0 5px;
+}
+
+.page_container ol {
+  margin-bottom: 30px;
+}
+
+.page_container ol li {
+  text-indent: 1rem;
+  list-style: inside;
+  line-height: 1.5;
 }
 
 .p-top {
@@ -876,6 +940,27 @@ h3 {
   }
 }
 
+@media screen and (min-width: 1025px) {
+  .p-gnav ul li a strong {
+    display: none;
+  }
+}
+
+.p-gnav ul li a span {
+  display: none;
+}
+
+@media screen and (min-width: 1025px) {
+  .p-gnav ul li a span {
+    display: inline;
+    line-height: 1.5;
+  }
+}
+
+.p-gnav ul li a .menu-item-description {
+  font-size: 20px;
+}
+
 .p-gnav__pc {
   display: none;
 }
@@ -925,12 +1010,13 @@ h3 {
 
 .p-page-description__title {
   margin-bottom: 20px;
+  font-size: 20px;
 }
 
 @media screen and (min-width: 520px) {
   .p-page-description__title {
     margin-bottom: 40px;
-    font-size: 32px;
+    font-size: 30px;
   }
 }
 

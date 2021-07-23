@@ -21,11 +21,29 @@
                     border-top: $color-gray--text 1px solid;
                 }
             }
+
             a {
                 display: block;
                 padding-top: 20px;
                 @include responsive(pc) {
                     padding: 10px;
+
+                }
+                strong {
+                    @include responsive(pc) {
+                        display: none;
+                    }
+                }
+                
+                span {
+                    display: none;
+                    @include responsive(pc) {
+                        display: inline;
+                        line-height: 1.5;
+                    }
+                }
+                .menu-item-description {
+                    font-size: 20px;
                 }
             }
         }

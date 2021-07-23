@@ -19,7 +19,7 @@
             <section class="p-top">
                 <h1 class="c-title--top">Tagara Ballet Circle</h1>
                 <button class="c-hamburger l-aside--bt is-hamburger">
-                    <?xml version="1.0" encoding="iso-8859-1"?>
+                    <xml version="1.0" encoding="iso-8859-1">
                     <!-- Generator: Adobe Illustrator 25.2.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
                     <svg version="1.1" id="&#x30EC;&#x30A4;&#x30E4;&#x30FC;_1"
                         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 50"

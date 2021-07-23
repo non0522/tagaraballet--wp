@@ -8,7 +8,7 @@
             'search-form', 
             'comment-form', 
             'comment-list', 
-            'gallery', 
+
             'caption',
         ));
         add_theme_support( 'menus' );
@@ -17,7 +17,7 @@
         add_theme_support( 'automatic-feed-links' );
         /* ナビメニューの定義と設定*/
         register_nav_menus(array(
-            'global_nav' => esc_html__('main_nav', 'tagara'),
+            'main_nav' => esc_html__('main_nav', 'tagara'),
             'sub_nav' => esc_html__('sub_nav', 'tagara'),
         ));
     }
@@ -73,10 +73,10 @@
 
 /* 出力されたメニューアイテムの文字列を置換（タイトル属性をタイトル下に表示）
    ========================================================================== */
-   function description_in_nav_menu($item_output, $item){
+   function attribute_in_nav_menu($item_output, $item){
        return preg_replace('/(<a.*?>[^<]*?)</', '$1' . "<br /><span>{$item->attr_title}</span><", $item_output);
     }
-    add_filter('walker_nav_menu_start_el', 'description_in_nav_menu', 10, 4);
+    add_filter('walker_nav_menu_start_el', 'attribute_in_nav_menu', 10, 4);
 
 
 /* archiveをカスタマイズ（urlを付与）
@@ -190,3 +190,44 @@ function cpt_register_dep() { //add_actionの２つのパラメーターを定�
 	register_taxonomy( "dep", [ "instructors-list" ], $args ); //「works」というカスタム投稿タイプにカテゴリーを追加
 }
 add_action( 'init', 'cpt_register_dep' );
+
+
+
+/* 出力されたメニューアイテムの説明を表示
+   ========================================================================== */
+function prefix_nav_description( $item_output, $item, $depth, $args ) {
+ if ( !empty( $item->description ) ) {
+ $item_output = str_replace( '">' . $args->link_before . $item->title, '">' . $args->link_before . '<strong>' . $item->title . '</strong>' . '<span class="menu-item-description">' . $item->description . '</span>' , $item_output );
+ }
+ return $item_output;
+}
+add_filter( 'walker_nav_menu_start_el', 'prefix_nav_description', 10, 4 );
+
+
+/* single.phpとpage.phpで目次を自動作成（見出しが４つ以上になったとき）
+   ========================================================================== */
+function my_add_content($content) {
+	if (is_single() || is_page()) {
+	  $pattern = '/<h[2]>(.*?)<\/h[2]>/i';
+	  preg_match_all($pattern, $content, $matches, PREG_SET_ORDER);
+  
+	  if (count($matches) > 3) {
+		$toc = '<h2>目次</h2><ol>';
+		$i = 0;
+  
+		foreach ($matches as $element) {
+		  $i++;
+		  $id = 'chapter-' . $i;
+		  $chapter = preg_replace('/<(.+?)>(.+?)<\/(.+?)>/',  '<$1 id ="' . $id . '">$2</$3>', $element[0]);
+		  $content = preg_replace($pattern, $chapter, $content, 1);
+		  $title = $element[1];
+		  $toc .= '<li><a href="#' . $id . '">' . $title . '</a></li>';
+		}
+		
+		$toc .= '</ol>';
+		$content = $toc . $content;
+	  }
+	}
+	return $content;
+  }
+  add_filter('the_content', 'my_add_content');

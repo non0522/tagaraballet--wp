@@ -1,9 +1,10 @@
 .p-page-description {
     &__title {
-        margin-bottom: 20px;        
+        margin-bottom: 20px;
+        font-size: 20px;        
         @include responsive(tab) {
             margin-bottom: 40px;
-            font-size: 32px;
+            font-size: 30px;
         }
         &__text {
             @include responsive(tab) {

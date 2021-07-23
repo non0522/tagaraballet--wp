@@ -1,0 +1,75 @@
+// single.phpのsvg画像の調整
+.p-single {
+    .wp-post-image[src*=".svg"] {
+        max-width: 200px;
+        text-align: center;
+        display: block;
+        margin: 0 auto 20px;
+        @include responsive(tab){
+            max-width: 300px;
+            margin: 0 auto 40px;
+        }
+    }
+}
+
+// single.phpとpage.phpの目次調整
+.page_container {
+    h2{
+        text-indent: 35px;
+        position: relative;
+        font-weight: bold;
+        font-size: 16px;
+        display: inline-block;
+        // border-bottom: solid 2px $color-gray--footer;
+        // padding-bottom: 5px;
+        margin: 20px 0 10px;
+        @include responsive(tab) {
+            font-size: 20px;
+            // margin-bottom: 40px;
+        }
+    }
+    h2:before {
+        position: absolute;
+        content: "";
+        top: 50%;
+        left: 0;
+        width: 30px;
+        height: 1px;
+        background-color: black;
+        // margin: 0 5px;
+    }
+    h2:after {
+        position: absolute;
+        content: "";
+        top: 50%;
+        width: 30px;
+        height: 1px;
+        background-color: black;
+        margin: 0 5px;
+    }
+    ol {
+        margin-bottom: 30px;
+        li {
+            text-indent: 1rem;
+            list-style: inside;
+            line-height: 1.5;
+        }
+    }
+}
+// <div class="page_container">
+//     <h2>目次</h2>
+//     <ol>
+//         <li>
+//             <a href="#chapter-1">2021年発表会</a>
+//         </li>
+//         <li>
+//             <a href="#chapter-2">2020発表会</a>
+//         </li>
+//         <li>
+//             <a href="#chapter-3">その他</a>
+//         </li>
+//         <li>
+//             <a href="#chapter-4">おすすめ</a>
+//         </li>
+//     </ol>
+// <h2 id="chapter-1">2021年発表会</h2>

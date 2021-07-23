@@ -5,7 +5,11 @@
     }
 }
 
+
 .c-title--heading {
+    font-family: 'Libre Baskerville', "Noto Serif JP";
+    font-size: 24px;
+    color: $color-black--title;
     position: absolute;
     bottom: 20px;
     left: 20px;
@@ -14,6 +18,7 @@
     line-height: 1.5;
     z-index: 1;
     @include responsive(tab) {
+        font-size: 40px;
         left: 40px;
     }
     span {
@@ -24,11 +29,14 @@
     }
 }
 .c-title--article {
+    font-weight: bold;
+    font-size: 24px;
     display: inline-block;
     border-bottom: solid 2px $color-gray--footer;
     padding-bottom: 10px;
     margin-bottom: 20px;
     @include responsive(tab) {
+        font-size: 30px;
         margin-bottom: 40px;
     }
     

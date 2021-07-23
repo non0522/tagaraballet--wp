@@ -1,7 +1,7 @@
 <?php get_header(); ?>
         <main class="l-main u-mb-s">
             <section class="p-page-description">
-                <h3 class="p-page-description__title c-title--article">
+                <h3 class="p-page-description__title">
                     タイトルが入ります
                 </h3>
                 <p class="p-page-description__text">

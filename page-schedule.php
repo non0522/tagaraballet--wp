@@ -65,9 +65,9 @@ Template Name: レッスンスケジュール・料金 */
                             </ul>
                         </div>
                     </article>
-                    <article class="p-article">
-                        <h3 class="c-title--article">Lesson Fee<span>レッスン料金のご案内</span></h3>
-                        <p>テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p>
+                    <article id="anchor-price" class="p-article">
+                        <h3 class="c-title--article"><?php echo CFS()->get('s_page-title2'); ?><span><?php echo CFS()->get('s_page-title2--ja'); ?></span></h3>
+                        <p><?php echo CFS()->get('s_page-desc2'); ?></p>
                         <table class="p-table--fee">
                             <tr><th colspan="2">入会金 / チケット代</th></tr>
                             <tr>

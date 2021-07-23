@@ -10,6 +10,7 @@
 </head>
 
 <body <?php body_class(); ?>>
+<?php wp_body_open(); ?>
     <section class="l-container u-m-base u-mb-m">
         <header class="l-header p-header">
             <section class="p-top">
