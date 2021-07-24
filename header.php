@@ -31,37 +31,6 @@
                         <rect x="10" y="30" class="st3" width="30" height="2"/> 
                     </svg>
                     <span>MENU</span>
-
                 </button>
             </section>
-            <section <?php if(is_front_page()) {
-                                echo 'class="p-hero"';
-                            }else {
-                                echo 'class="p-hero p-hero--archive"';
-                            } ?>>
-                <h2 <?php if(is_front_page()) {
-                                echo 'class="c-title--heading"';
-                            }else {
-                                echo 'class="c-title--heading c-title--heading--archive"';
-                            } ?>>大人<span>のための</span><br>バレエサークル</h2>
-                <?php 
-                    if(is_front_page()){
-                        echo '<div class="c-shadow"></div>';
-                    }else {
-                        echo '';
-                    } ?>
-                <img class="c-logo" src="<?php bloginfo('template_directory'); ?>/img/logo2.svg" alt="">
-            </section>
-
-            <nav class="p-subnav">
-            <?php wp_nav_menu(
-                array( 
-                    'theme_location' => 'sub_nav',
-                    'container' => '',
-                    'menu_class' => 'nav',
-                    'items_wrap' => '<ul>%3$s</ul>',
-                    ) 
-            ); ?>
-            </nav>
             
-        </header><!-- /.l-header -->

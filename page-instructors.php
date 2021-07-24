@@ -3,6 +3,21 @@
 /*
 Template Name: 講師紹介ページ（Instructors） */
 ?>
+            <section class="p-hero p-hero--page">
+                <h2 class="c-title--heading c-title--heading--archive"><?php wp_title(''); ?></h2>
+                <img class="c-logo" src="<?php bloginfo('template_directory'); ?>/img/logo2.svg" alt="">
+            </section>
+            <nav class="p-subnav">
+                <?php wp_nav_menu(
+                    array( 
+                        'theme_location' => 'sub_nav',
+                        'container' => '',
+                        'menu_class' => 'nav',
+                        'items_wrap' => '<ul>%3$s</ul>',
+                        ) 
+                ); ?>
+            </nav>
+        </header><!-- /.l-header -->
 
         <main class="l-main u-mb-s">
             <section class="p-main">
@@ -88,12 +103,12 @@ Template Name: 講師紹介ページ（Instructors） */
                     <?php endif; ?>
 
                         <div class="c-button c-button--right">
-                            <a href="">フェルデンクライスについて
+                            <a href="https://studio-les-portes.localinfo.jp/pages/1593964/feldenkrais">フェルデンクライスについて
                                 <span class="c-arrow"></span>
                             </a>
                         </div>
                         <div class="c-button c-button--right">
-                            <a href="">外部紹介HPへ
+                            <a href="https://studio-les-portes.localinfo.jp/">武政 裕美先生のHPへ
                                 <span class="c-arrow"></span>
                             </a>
                         </div>

@@ -3,6 +3,21 @@
 /*
 Template Name: スタジオ紹介ページ（About Tagara） */
 ?>
+            <section class="p-hero p-hero--page">
+                <h2 class="c-title--heading c-title--heading--archive"><?php wp_title(''); ?></h2>
+                <img class="c-logo" src="<?php bloginfo('template_directory'); ?>/img/logo2.svg" alt="">
+            </section>
+            <nav class="p-subnav">
+                <?php wp_nav_menu(
+                    array( 
+                        'theme_location' => 'sub_nav',
+                        'container' => '',
+                        'menu_class' => 'nav',
+                        'items_wrap' => '<ul>%3$s</ul>',
+                        ) 
+                ); ?>
+            </nav>
+        </header><!-- /.l-header -->
         <main class="l-main u-mb-s">
             <section class="p-page-description">
 
@@ -21,7 +36,7 @@ Template Name: スタジオ紹介ページ（About Tagara） */
                             </p>
                         </section>
                         <div class="c-button">
-                            <a href="">詳細はこちら
+                            <a href="<?php bloginfo('url') ;?>/schedule">レッスンスケジュールを見る
                                 <span class="c-arrow"></span>
                             </a>
                         </div>
@@ -35,7 +50,7 @@ Template Name: スタジオ紹介ページ（About Tagara） */
                             <ul class="p-article__content__text"><?php echo CFS()->get('t_address') ; ?></ul>
                         </section>
                         <div class="c-button">
-                            <a href="">お問い合わせ
+                            <a href="<?php bloginfo('url') ;?>/contact">お問い合わせ
                                 <span class="c-arrow"></span>
                             </a>
                         </div>

@@ -1,6 +1,14 @@
 .p-archive {
     &__list {
         margin-bottom: 50px;
+        width: 100%;
+        li {
+            padding-bottom: 20px;
+            @include responsive(tab) {
+                padding-bottom: 40px;
+                width: 100%;
+            }
+        }
         article {
             max-height: 200px;
             margin-bottom: 40px;

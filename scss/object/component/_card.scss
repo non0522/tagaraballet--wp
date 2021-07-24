@@ -1,25 +1,42 @@
 .c-card {
     display: flex;
-    max-height: 100px;
+    max-height: 140px;
     transition: .5s;
+    align-items: center;
     @include responsive(tab) {
-        max-height: 140px;
     }
     &:hover {
         background: #f7f7f7;
     }
     img {
+        height: fit-content;
         width: 30%;
         box-shadow: 3px 3px 7px 0px $color-gray--border;
         object-fit: contain;
         @include responsive(tab) {
+            max-height: 140px;
             width: 35%;
         }
     }
+    &__wrap {
+        width: 30%;
+        text-align: center;
+        img {
+            width: 100%;
+        }
+        
+    }
+
     &__content {
+        width: 70%;
         margin-left: 16px;
         overflow: hidden;
         margin-bottom: 8px;
+        max-height: 120px;
+        @include responsive(tab) {
+            max-height: 140px;
+            width: 65%;
+        }
         
         &__date {
             margin-bottom: 10px;
@@ -45,7 +62,6 @@
 .c-card--instructors {
     margin-bottom: 40px;
     max-height: inherit;
-    align-items: center;
     img {
         object-fit: cover;
         width: 40%;
@@ -56,6 +72,7 @@
     }
     .c-card__content {
         width: 60%;
+        max-height: inherit;
 
         &__title {
             padding: 10px 10px;
@@ -73,6 +90,21 @@
                 font-size: 16px;
             }
         }
+    }
+}
 
+.p-archive {
+    .c-card {
+        margin-bottom: 20px; 
+        @include responsive(tab) {
+            margin-bottom: 0;
+        }
+        li {
+
+            @include responsive(tab) {
+                max-height: 300px;
+            }
+                
+        }
     }
 }

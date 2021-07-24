@@ -3,6 +3,21 @@
 /*
 Template Name: レッスンスケジュール・料金 */
 ?>
+            <section class="p-hero p-hero--page">
+                <h2 class="c-title--heading c-title--heading--archive"><?php wp_title(''); ?></h2>
+                <img class="c-logo" src="<?php bloginfo('template_directory'); ?>/img/logo2.svg" alt="">
+            </section>
+            <nav class="p-subnav">
+                <?php wp_nav_menu(
+                    array( 
+                        'theme_location' => 'sub_nav',
+                        'container' => '',
+                        'menu_class' => 'nav',
+                        'items_wrap' => '<ul>%3$s</ul>',
+                        ) 
+                ); ?>
+            </nav>
+        </header><!-- /.l-header -->
 
         <main class="l-main u-mb-s">
             <section class="p-page-description">
@@ -16,7 +31,7 @@ Template Name: レッスンスケジュール・料金 */
                         <p><?php echo CFS()->get('s_page-desc1'); ?></p>
  
                         <div class="c-button">
-                            <a href="">今月の特別レッスン
+                            <a href="<?php bloginfo('url') ;?>/blog">ブログを見る
                                 <span class="c-arrow"></span>
                             </a>
                         </div>
@@ -68,6 +83,11 @@ Template Name: レッスンスケジュール・料金 */
                     <article id="anchor-price" class="p-article">
                         <h3 class="c-title--article"><?php echo CFS()->get('s_page-title2'); ?><span><?php echo CFS()->get('s_page-title2--ja'); ?></span></h3>
                         <p><?php echo CFS()->get('s_page-desc2'); ?></p>
+                        <div class="c-button">
+                            <a href="<?php bloginfo('url') ;?>/contact">お問い合わせ
+                                <span class="c-arrow"></span>
+                            </a>
+                        </div>
                         <table class="p-table--fee">
                             <tr><th colspan="2">入会金 / チケット代</th></tr>
                             <tr>

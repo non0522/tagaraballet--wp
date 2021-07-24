@@ -1,12 +1,23 @@
 <?php get_header(); ?>
+            <section class="p-hero p-hero--archive">
+                <h2 class="c-title--heading c-title--heading--archive">Blog</h2>
+                <img class="c-logo" src="<?php bloginfo('template_directory'); ?>/img/logo2.svg" alt="">
+            </section>
+            <nav class="p-subnav">
+                <?php wp_nav_menu(
+                    array( 
+                        'theme_location' => 'sub_nav',
+                        'container' => '',
+                        'menu_class' => 'nav',
+                        'items_wrap' => '<ul>%3$s</ul>',
+                        ) 
+                ); ?>
+            </nav>
+        </header><!-- /.l-header -->
+
         <main class="l-main u-mb-s">
             <section class="p-page-description">
-                <h3 class="p-page-description__title c-title--article">
-                    タイトルが入ります
-                </h3>
-                <p class="p-page-description__text">
-                    テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
-                </p>
+
             </section>
             
             <section class="p-main">
@@ -17,7 +28,7 @@
                             <li>
                                 <a href="<?php the_permalink(); ?>">
                                     <article class="c-card">
-                                        <?php the_post_thumbnail(); ?>
+                                    <?php the_post_thumbnail(); ?>
                                         <!-- <img src="/img/introduce.jpg" alt=""> -->
                                         <section class="c-card__content">
                                             <p class="c-card__content__date"><?php echo get_the_date('Y.m.d'); ?></p>

@@ -139,7 +139,7 @@ h1 {
 }
 
 .c-title--top {
-  padding: 10px 20px;
+  padding: 10px 10px;
 }
 
 @media screen and (min-width: 520px) {
@@ -278,9 +278,9 @@ h1 {
   background-size: cover;
   position: absolute;
   width: 400px;
-  height: 200px;
-  top: 70px;
-  left: -80px;
+  height: 250px;
+  bottom: -80px;
+  left: -130px;
 }
 
 @media screen and (min-width: 520px) {
@@ -303,15 +303,12 @@ h1 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  max-height: 100px;
+  max-height: 140px;
   -webkit-transition: .5s;
   transition: .5s;
-}
-
-@media screen and (min-width: 520px) {
-  .c-card {
-    max-height: 140px;
-  }
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .c-card:hover {
@@ -319,6 +316,9 @@ h1 {
 }
 
 .c-card img {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   width: 30%;
   -webkit-box-shadow: 3px 3px 7px 0px #838383;
           box-shadow: 3px 3px 7px 0px #838383;
@@ -328,14 +328,33 @@ h1 {
 
 @media screen and (min-width: 520px) {
   .c-card img {
+    max-height: 140px;
     width: 35%;
   }
 }
 
+.c-card__wrap {
+  width: 30%;
+  text-align: center;
+}
+
+.c-card__wrap img {
+  width: 100%;
+}
+
 .c-card__content {
+  width: 70%;
   margin-left: 16px;
   overflow: hidden;
   margin-bottom: 8px;
+  max-height: 120px;
+}
+
+@media screen and (min-width: 520px) {
+  .c-card__content {
+    max-height: 140px;
+    width: 65%;
+  }
 }
 
 .c-card__content__date {
@@ -371,9 +390,6 @@ h1 {
 .c-card--instructors {
   margin-bottom: 40px;
   max-height: inherit;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .c-card--instructors img {
@@ -385,6 +401,7 @@ h1 {
 
 .c-card--instructors .c-card__content {
   width: 60%;
+  max-height: inherit;
 }
 
 .c-card--instructors .c-card__content__title {
@@ -408,6 +425,22 @@ h1 {
 @media screen and (min-width: 520px) {
   .c-card--instructors .c-card__content__text {
     font-size: 16px;
+  }
+}
+
+.p-archive .c-card {
+  margin-bottom: 20px;
+}
+
+@media screen and (min-width: 520px) {
+  .p-archive .c-card {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (min-width: 520px) {
+  .p-archive .c-card li {
+    max-height: 300px;
   }
 }
 
@@ -698,10 +731,6 @@ h1 {
   .p-hero--page {
     height: 500px;
   }
-}
-
-.p-hero--page h2 {
-  font-family: 'Baskerville';
 }
 
 @media screen and (min-width: 1025px) {
@@ -1080,6 +1109,18 @@ h1 {
 
 .p-archive__list {
   margin-bottom: 50px;
+  width: 100%;
+}
+
+.p-archive__list li {
+  padding-bottom: 20px;
+}
+
+@media screen and (min-width: 520px) {
+  .p-archive__list li {
+    padding-bottom: 40px;
+    width: 100%;
+  }
 }
 
 .p-archive__list article {

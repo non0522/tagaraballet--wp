@@ -1,4 +1,21 @@
 <?php get_header(); ?>
+            <section class="p-hero">
+                <h2 class="c-title--heading">大人<span>のための</span><br>バレエサークル</h2>
+                <div class="c-shadow"></div>
+                <img class="c-logo" src="<?php bloginfo('template_directory'); ?>/img/logo2.svg" alt="">
+            </section>  
+            <nav class="p-subnav">
+                <?php wp_nav_menu(
+                    array( 
+                        'theme_location' => 'sub_nav',
+                        'container' => '',
+                        'menu_class' => 'nav',
+                        'items_wrap' => '<ul>%3$s</ul>',
+                        ) 
+                ); ?>
+            </nav>
+        </header><!-- /.l-header -->
+        
         <main class="l-main u-mb-s">
             <section class="p-news">
                 <h3 class="c-title--article">What's New<span>新着情報</span></h3>

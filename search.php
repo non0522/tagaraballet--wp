@@ -1,11 +1,24 @@
 <?php get_header(); ?>
+
+<section class="p-hero p-hero--archive">
+                <h2 class="c-title--heading c-title--heading--archive">Search Result</h2>
+                <img class="c-logo" src="<?php bloginfo('template_directory'); ?>/img/logo2.svg" alt="">
+            </section>
+            <nav class="p-subnav">
+                <?php wp_nav_menu(
+                    array( 
+                        'theme_location' => 'sub_nav',
+                        'container' => '',
+                        'menu_class' => 'nav',
+                        'items_wrap' => '<ul>%3$s</ul>',
+                        ) 
+                ); ?>
+            </nav>
+        </header><!-- /.l-header -->
         <main class="l-main u-mb-s">
             <section class="p-page-description">
-                <h3 class="p-page-description__title">
-                    タイトルが入ります
-                </h3>
                 <p class="p-page-description__text">
-                    テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+                    以下に検索結果を表示しています。
                 </p>
             </section>
             

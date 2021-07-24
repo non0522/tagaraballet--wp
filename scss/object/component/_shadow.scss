@@ -4,9 +4,9 @@
     background-size: cover;
     position: absolute;
     width: 400px;
-    height: 200px;
-    top: 70px;
-    left: -80px;
+    height: 250px;
+    bottom: -80px;
+    left: -130px;
     @include responsive(tab) {
         width: 600px;
         height: 300px;
