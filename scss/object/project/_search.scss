@@ -34,4 +34,17 @@
             background-image: url(/img/search2.svg);
         }
     }
+        input[type="submit"] {
+            width: 30px;
+            background: url(../img/search.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            @include responsive(pc) {
+                background: url(../img/search2.svg);
+                background-repeat: no-repeat;
+            background-position: center;
+            }
+
+
+        }
 }

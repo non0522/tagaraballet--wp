@@ -11,7 +11,7 @@
 
             'caption',
         ));
-        add_theme_support( 'menus' );
+
         add_theme_support( 'title-tag' );
         add_theme_support( 'post-thumbnails' );
         add_theme_support( 'automatic-feed-links' );
@@ -46,29 +46,6 @@
     add_action( 'wp_enqueue_scripts', 'tagara_script' );
 
 
-/* .svg 拡張子画像のアップロードを許可
-   ========================================================================== */
-   function cc_mime_types($mimes) {
-    $mimes['svg'] = 'image/svg+xml';
-    return $mimes;
-  }
-  add_filter('upload_mimes', 'cc_mime_types');
-
-
-/* アイキャッチ設定で SVG 画像のサムネイルを表示（config.phpを修正する必要があり）
-   ========================================================================== */
-   function fix_svg_thumb_display() {
-    echo 
-    '<style>
-      td.media-icon img[src$=".svg"], 
-      img[src$=".svg"].attachment-post-thumbnail, 
-      #set-post-thumbnail img[src$=".svg"]{ 
-      width: 100% !important; 
-      height: auto !important; 
-      }
-    </style>';
-  }
-  add_action('admin_head', 'fix_svg_thumb_display');
 
 
 /* 出力されたメニューアイテムの文字列を置換（タイトル属性をタイトル下に表示）
@@ -97,7 +74,7 @@ add_filter('register_post_type_args', 'post_has_archive', 10, 2);
 function mytheme_breadcrumb() {
 	//HOME>と表示
 	$sep = '>';
-	echo '<li><a href="'.get_bloginfo('url').'" >HOME</a></li>';
+	echo '<li><a href="'.esc_url( home_url( '/' ) ).'" >HOME</a></li>';
 	echo $sep;
  
 	//投稿記事ページとカテゴリーページでの、カテゴリーの階層を表示
@@ -137,59 +114,7 @@ function mytheme_breadcrumb() {
 }
 
 
-/* カスタム投稿の追加
-   ========================================================================== */
-function cpt_register_works() { //add_actionの２つのパラメーターを定義
-	$labels = [
-		"singular_name" => "instructors-list",
-		"edit_item" => "instructors-list",
-	];
-	$args = [
-		"label" => "講師一覧", //管理画面に出てくる名前
-		"labels" => $labels,
-		"description" => "",
-		"public" => true,
-		"show_in_rest" => true,
-		"rest_base" => "",
-		"rest_controller_class" => "WP_REST_Posts_Controller",
-		"has_archive" => true,
-		"delete_with_user" => false,
-		"exclude_from_search" => false,
-		"map_meta_cap" => true,
-		"hierarchical" => true,
-		"rewrite" => [ "slug" => "instructors-list", "with_front" => true ], //スラッグをworksに設定
-		"query_var" => true,
-		"menu_position" => 5,
-		"supports" => [ "title", "editor", "thumbnail" ],
-	];
-	register_post_type( "instructors-list", $args );
-}
-add_action( 'init', 'cpt_register_works' );
 
-
-/* カスタム投稿にカテゴリを追加
-   ========================================================================== */
-function cpt_register_dep() { //add_actionの２つのパラメーターを定義
-	$labels = [
-		"singular_name" => "dep",
-	];
-	$args = [
-		"label" => "カテゴリー",
-		"labels" => $labels,
-		"publicly_queryable" => true,
-		"hierarchical" => true,
-		"show_in_menu" => true,
-		"query_var" => true,
-		"rewrite" => [ 'slug' => 'dep', 'with_front' => true, ], //カテゴリーのスラッグ
-		"show_admin_column" => false,
-		"show_in_rest" => true,
-		"rest_base" => "dep",
-		"rest_controller_class" => "WP_REST_Terms_Controller",
-		"show_in_quick_edit" => false,
-		];
-	register_taxonomy( "dep", [ "instructors-list" ], $args ); //「works」というカスタム投稿タイプにカテゴリーを追加
-}
-add_action( 'init', 'cpt_register_dep' );
 
 
 

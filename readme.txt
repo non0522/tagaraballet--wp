@@ -13,11 +13,3 @@ Tested up to: 5.5.1
 Requires PHP: 5.6
 */
 
-/* Text meant only for screen readers. */
-.screen-reader-text {
-    clip: rect(1px, 1px, 1px, 1px);
-    position: absolute !important;
-    height: 1px;
-    width: 1px;
-    overflow: hidden;
-}

@@ -2,7 +2,7 @@
 
 <section class="p-hero p-hero--archive">
                 <h2 class="c-title--heading c-title--heading--archive">Blog</h2>
-                <img class="c-logo" src="<?php bloginfo('template_directory'); ?>/img/logo2.svg" alt="">
+                <img class="c-logo" src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/logo2.svg" alt="">
             </section>
             <nav class="p-subnav">
                 <?php wp_nav_menu(
@@ -33,6 +33,9 @@
                             </div>
                             <?php the_post_thumbnail('full'); ?>
                             <?php the_content(); ?>
+                            <div class="p-pagelink">
+                                <?php wp_link_pages( 'before=<p>&after=</p>&next_or_number=number&pagelink= %' ); ?>
+                            </div>
                             <section id="post-<?php the_ID(); ?>" <?php post_class(); ?>></section>
                         <?php endwhile; else: ?>
                         <p>表示できる記事がありません。</p>

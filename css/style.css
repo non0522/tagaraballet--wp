@@ -972,6 +972,21 @@ h1 {
   }
 }
 
+.p-search input[type="submit"] {
+  width: 30px;
+  background: url(../img/search.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@media screen and (min-width: 1025px) {
+  .p-search input[type="submit"] {
+    background: url(../img/search2.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
 .p-gnav {
   margin: 0 auto;
 }
@@ -996,6 +1011,7 @@ h1 {
   width: 33%;
   height: 100px;
   text-align: center;
+  line-height: .9;
 }
 
 @media screen and (min-width: 1025px) {
@@ -1012,12 +1028,28 @@ h1 {
 
 .p-gnav ul li a {
   display: block;
-  padding-top: 20px;
 }
 
 @media screen and (min-width: 1025px) {
   .p-gnav ul li a {
+    text-align: left !important;
     padding: 10px;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .p-gnav ul li a br {
+    display: none;
+  }
+}
+
+.p-gnav ul li a img {
+  width: 50px;
+}
+
+@media screen and (min-width: 1025px) {
+  .p-gnav ul li a img {
+    display: none !important;
   }
 }
 
@@ -1033,13 +1065,15 @@ h1 {
 
 @media screen and (min-width: 1025px) {
   .p-gnav ul li a span {
+    font-size: 22px;
+    text-align: left !important;
     display: inline;
-    line-height: 1.5;
+    line-height: 1.2;
   }
 }
 
 .p-gnav ul li a .menu-item-description {
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .p-gnav__pc {

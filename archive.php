@@ -1,7 +1,7 @@
 <?php get_header(); ?>
             <section class="p-hero p-hero--archive">
                 <h2 class="c-title--heading c-title--heading--archive">Blog</h2>
-                <img class="c-logo" src="<?php bloginfo('template_directory'); ?>/img/logo2.svg" alt="">
+                <img class="c-logo" src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/logo2.svg" alt="">
             </section>
             <nav class="p-subnav">
                 <?php wp_nav_menu(

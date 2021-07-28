@@ -2,7 +2,7 @@
             <section class="p-hero">
                 <h2 class="c-title--heading">大人<span>のための</span><br>バレエサークル</h2>
                 <div class="c-shadow"></div>
-                <img class="c-logo" src="<?php bloginfo('template_directory'); ?>/img/logo2.svg" alt="">
+                <img class="c-logo" src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/logo2.svg" alt="">
             </section>  
             <nav class="p-subnav">
                 <?php wp_nav_menu(
@@ -37,7 +37,7 @@
                     <?php endwhile; endif; ?>
                 </ul><!-- /.p-news__list -->
                 <div class="c-button">
-                    <a href="<?php bloginfo('url') ;?>/blog">もっと見る
+                    <a href="<?php echo esc_url( home_url() ) ;?>/blog">もっと見る
                         <span class="c-arrow"></span>
                     </a>
                 </div>
@@ -51,7 +51,7 @@
                             <p class="p-article__content__text"><?php echo CFS()->get('t_digest', '17'); ?></p>
                         </section>
                         <div class="c-button">
-                            <a href="<?php bloginfo('url') ;?>/tagara">詳細はこちら
+                            <a href="<?php echo esc_url( home_url() ) ;?>/tagara">詳細はこちら
                                 <span class="c-arrow"></span>
                             </a>
                         </div>
@@ -63,7 +63,7 @@
                             <p class="p-article__content__text"><?php echo CFS()->get('s_digest', '19'); ?></p>
                         </section>
                         <div class="c-button">
-                            <a href="<?php bloginfo('url') ;?>/schedule">詳細はこちら
+                            <a href="<?php echo esc_url( home_url() ) ;?>/schedule">詳細はこちら
                                 <span class="c-arrow"></span>
                             </a>
                         </div>
@@ -75,7 +75,7 @@
                             <p class="p-article__content__text"><?php echo CFS()->get('i_digest', '25'); ?></p>
                         </section>
                         <div class="c-button">
-                            <a href="<?php bloginfo('url') ;?>/instructors">詳細はこちら
+                            <a href="<?php echo esc_url( home_url() ) ;?>/instructors">詳細はこちら
                                 <span class="c-arrow"></span>
                             </a>
                         </div>

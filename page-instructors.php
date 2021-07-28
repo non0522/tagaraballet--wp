@@ -4,8 +4,8 @@
 Template Name: 講師紹介ページ（Instructors） */
 ?>
             <section class="p-hero p-hero--page">
-                <h2 class="c-title--heading c-title--heading--archive"><?php wp_title(''); ?></h2>
-                <img class="c-logo" src="<?php bloginfo('template_directory'); ?>/img/logo2.svg" alt="">
+                <h2 class="c-title--heading c-title--heading--archive"><?php single_post_title() ?></h2>
+                <img class="c-logo" src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/logo2.svg" alt="">
             </section>
             <nav class="p-subnav">
                 <?php wp_nav_menu(

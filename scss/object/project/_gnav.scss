@@ -12,6 +12,7 @@
             width: 33%;
             height: 100px;
             text-align: center;
+            line-height: .9;
             @include responsive(pc) {
                 width: 100%;
                 text-align: left;
@@ -24,10 +25,23 @@
 
             a {
                 display: block;
-                padding-top: 20px;
+                // padding-top: 20px;
                 @include responsive(pc) {
+                    text-align: left !important;
                     padding: 10px;
+                }
+                br {
+                    @include responsive(pc) {
+                        display: none;
 
+                    }
+                }
+                img {
+                    width: 50px;
+                    @include responsive(pc){
+                        display: none !important;
+                    }
+                    
                 }
                 strong {
                     @include responsive(pc) {
@@ -38,12 +52,14 @@
                 span {
                     display: none;
                     @include responsive(pc) {
+                        font-size: 22px;
+                        text-align: left !important;
                         display: inline;
-                        line-height: 1.5;
+                        line-height: 1.2;
                     }
                 }
                 .menu-item-description {
-                    font-size: 20px;
+                    font-size: 16px;
                 }
             }
         }
