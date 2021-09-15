@@ -27,10 +27,10 @@
                     
                     
                     <article class="p-single">
-                        <h3 class=""><?php the_title(); ?></h3>
-                        <div class="page_container">
-                            <?php the_content(); ?>
-                        </div>
+                    <h3 class="c-title--article">Schedule<span>今月の日程</span></h3>
+                    <div class="page_container">
+                        <?php the_content(); ?>
+                    </div>
                     </article>
                     <?php endwhile; endif; ?>
                 </section><!-- /.p-main__contents -->

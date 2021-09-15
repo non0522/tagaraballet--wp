@@ -25,6 +25,7 @@ Template Name: スタジオ紹介ページ（About Tagara） */
             
             <section class="p-main">
                 <section class="p-main__contents u-mb-s">
+                <?php /* ?>
                     <article class="p-article">
                         <h3 class="c-title--article"><?php echo CFS()->get('t_page-title1'); ?><span><?php echo CFS()->get('t_page-title1--ja'); ?></span></h3>
                         <section class="p-article__content">
@@ -41,6 +42,7 @@ Template Name: スタジオ紹介ページ（About Tagara） */
                             </a>
                         </div>
                     </article>
+                    <?php */ ?>
                     <article id="anchor-map" class="p-article p-article--map">
                         <h3 class="c-title--article"><?php echo CFS()->get('t_page-title2'); ?><span><?php echo CFS()->get('t_page-title2--ja'); ?></span></h3>
                         <!-- <h3 class="">タイトルが入ります</h3> -->

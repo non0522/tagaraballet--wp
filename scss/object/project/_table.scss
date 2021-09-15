@@ -3,6 +3,7 @@
     box-sizing: border-box;
     @include responsive(tab) {
         display: flex;
+        text-align: center;
     }
     &__time {
         background-color: #F5F5F5;
@@ -22,7 +23,10 @@
     }
 
     ul {
-        flex-basis: 18%;
+        flex-basis: 33%;
+        @include responsive(tab) {
+            text-align: center;
+        }
         &:first-child {
             flex-basis: 10%;
         }
@@ -33,6 +37,7 @@
             font-weight: bold;
             padding: 20px;
             @include responsive(tab) {
+                padding: 40px 20px 20px;
             }
         }
         &:last-child {

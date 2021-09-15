@@ -53,8 +53,8 @@ Template Name: 講師紹介ページ（Instructors） */
                         'post_type' => 'instructors-list',
                         'taxonomy' => 'dep',
                         'term' => 'guest',
-                        'order' => 'ASC',
-                        'orderby' => 'modified'
+                        // 'order' => 'ASC',
+                        // 'orderby' => 'modified'
                         // 'posts_per_page' => 4
                         
                     );
@@ -75,6 +75,32 @@ Template Name: 講師紹介ページ（Instructors） */
                     <?php wp_reset_postdata(); ?>
                     <?php else: ?>
                     <?php endif; ?>
+
+
+                    <?php
+                    $args = array(
+                        'post_type' => 'instructors-list',
+                        'taxonomy' => 'dep',
+                        'term' => 'male',
+                    );
+                    $the_query = new WP_Query($args);
+                    ?>
+                    <article class="p-article">
+                        <h3 class="c-title--article">Pas De Deux<span>パ・ド・ドゥ講師</span></h3>
+                        <?php if($the_query->have_posts()) : while ($the_query->have_posts()) : $the_query->the_post(); ?>
+                        <article class="c-card c-card--instructors">
+                            <img src="<?php echo CFS()->get('img'); ?>" alt="">
+                            <section class="c-card__content">
+                                <h4 class="c-card__content__title"><?php the_title(); ?></h4>
+                                <p class="c-card__content__text"><?php echo CFS()->get('desc') ?></p>
+                            </section>
+                        </article>
+                        <?php endwhile; ?>
+                    </article>
+                    <?php wp_reset_postdata(); ?>
+                    <?php else: ?>
+                    <?php endif; ?>
+
 
 
                     <?php

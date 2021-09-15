@@ -113,3 +113,96 @@
         }
     }
 } 
+.wp-block-gallery.is-cropped .blocks-gallery-item img {
+    height: 200px !important;
+}
+
+
+//イベントオーガナイザーのカスタム
+// ==========================================================================
+.fc-wed {
+    display: none;
+}
+
+.fc-wed {}
+
+.fc-wed {
+    display: none;
+}
+
+.fc-thu {
+    display: none;
+}
+
+.fc-sat {
+    display: none;
+}
+
+.fc-sun {
+    display: none;
+}
+
+td.fc-day-number.fc-mon.fc-other-month.fc-past {}
+
+td.fc-day-number.fc-mon.fc-other-month.fc-past {}
+
+td.fc-day-number {
+    width: 33%;
+}
+.fc-widget-content {
+    overflow: hidden;
+}
+.fc-day-header.fc-widget-header {
+    line-height: 3;
+}
+.fc-content span {
+    font-size: 12px;
+}
+.fc-content-skeleton {
+    table {
+        tbody {
+            tr {
+                td:nth-child(3),
+                td:nth-child(4),
+                td:nth-child(6),
+                td:nth-child(7) {
+                    display: none;
+                }
+                .fc-event-container {
+                    display: table-cell !important;
+                }
+            }
+        }
+    }
+}
+.eo-fullcalendar .fc-view-container .fc-view table tbody .fc-widget-content .fc-day-grid-container .fc-day-grid .fc-row .fc-content-skeleton table tbody td .fc-day-grid-event {
+    display: block;
+    margin-bottom: 10px;
+    padding: 2px 5px;
+    height: 20px;
+    line-height: 20px;
+    border-radius: 3px;
+    font-size: 10px;
+    font-feature-settings: "palt";
+    text-decoration: none;
+    letter-spacing: 0;
+    overflow: hidden;
+    }
+
+ 
+.st-pre .fc-toolbar .fc-left {
+    float: left;
+    font-size: 1.2rem;
+    line-height: 2;
+}
+.st-pre .fc-toolbar .fc-right {
+    float: right;
+}
+.fc-toolbar .fc-right {
+    float: right !important;
+}
+
+
+.fc .fc-toolbar>*>* {
+    float: left !important;
+}

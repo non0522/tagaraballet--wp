@@ -50,11 +50,16 @@
                             <img src="<?php echo CFS()->get('t_img', '17'); ?>" alt="">
                             <p class="p-article__content__text"><?php echo CFS()->get('t_digest', '17'); ?></p>
                         </section>
-                        <div class="c-button">
-                            <a href="<?php echo esc_url( home_url() ) ;?>/tagara">詳細はこちら
-                                <span class="c-arrow"></span>
-                            </a>
-                        </div>
+                    <div class="c-button">
+                        <a href="<?php echo esc_url( home_url() ) ;?>/this_schedule">今月の日程
+                            <span class="c-arrow"></span>
+                        </a>
+                    </div>
+                    <div class="c-button">
+                        <a href="<?php echo esc_url( home_url() ) ;?>/tagara">アクセス
+                            <span class="c-arrow"></span>
+                        </a>
+                    </div>
                     </article><!-- /.p-concept -->
                     <article class="p-article p-lesson">
                         <h3 class="c-title--article"><?php echo CFS()->get('s_title', '19'); ?><span><?php echo CFS()->get('s_title--ja', '19'); ?></span></h3>

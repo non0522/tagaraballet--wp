@@ -8,7 +8,7 @@
             'search-form', 
             'comment-form', 
             'comment-list', 
-
+			'gallery',
             'caption',
         ));
 
@@ -156,3 +156,7 @@ function my_add_content($content) {
 	return $content;
   }
   add_filter('the_content', 'my_add_content');
+
+/* eventorgnaizer
+   ========================================================================== */
+  add_filter('eventorganiser_calendar_event_link','__return_false');

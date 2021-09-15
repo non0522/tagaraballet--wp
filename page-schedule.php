@@ -31,7 +31,7 @@ Template Name: レッスンスケジュール・料金 */
                         <p><?php echo CFS()->get('s_page-desc1'); ?></p>
  
                         <div class="c-button">
-                            <a href="<?php echo esc_url( home_url() ) ;?>/blog">ブログを見る
+                            <a href="<?php echo esc_url( home_url() ) ;?>/this_schedule">今月のレッスンスケジュールを見る
                                 <span class="c-arrow"></span>
                             </a>
                         </div>
@@ -57,6 +57,7 @@ Template Name: レッスンスケジュール・料金 */
                                 <li><div><?php echo CFS()->get('tue3'); ?></div></li>
                                 <li><div><?php echo CFS()->get('tue4'); ?></div></li>
                             </ul>
+                            <?php /* ?>
                             <ul>
                                 <li class="top-line">WEDNESDAY<span><br>水曜日</span></li>
                                 <li><div><?php echo CFS()->get('wed1'); ?></div></li>
@@ -71,6 +72,7 @@ Template Name: レッスンスケジュール・料金 */
                                 <li><div><?php echo CFS()->get('thu3'); ?></div></li>
                                 <li><div><?php echo CFS()->get('thu4'); ?></div></li>
                             </ul>
+                            <?php */ ?>
                             <ul>
                                 <li class="top-line">FRIDAY<span><br>金曜日</span></li>
                                 <li><div><?php echo CFS()->get('fri1'); ?></div></li>
